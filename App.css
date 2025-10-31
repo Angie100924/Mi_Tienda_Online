@@ -1,0 +1,538 @@
+/* === RESET Y BASE === */
+body {
+  background: linear-gradient(180deg, #fff7f9 0%, #fffdfc 100%);
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Centrado general */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* === LOGOS === */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  transition: filter 300ms ease;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 1.5em #ff8fa3aa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* === HOME === */
+.home-container {
+  padding: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+h1 {
+  text-align: center;
+  color: #c41e56;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+/* === NAVBAR === */
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.nav-bar button {
+  background-color: #ff8fa3;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.nav-bar button:hover {
+  background-color: #ff6f91;
+  transform: translateY(-2px);
+}
+
+/* Botones específicos */
+.btn-login {
+  background-color: #6c63ff;
+}
+
+.btn-login:hover {
+  background-color: #574bff;
+}
+
+.btn-logout {
+  background-color: #ff5959;
+}
+
+.btn-logout:hover {
+  background-color: #e63946;
+}
+
+/* === FILTRO === */
+.filtro-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filtro-container select {
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 2px solid #ff8fa3;
+  background-color: white;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.filtro-container select:hover {
+  border-color: #ff6f91;
+  box-shadow: 0 0 8px rgba(255, 111, 145, 0.3);
+}
+
+/* === PRODUCTOS === */
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 25px;
+  margin-top: 1rem;
+}
+
+.producto-card {
+  background-color: white;
+  border-radius: 16px;
+  padding: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.07);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(255, 143, 163, 0.2);
+}
+
+.producto-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.producto-card h3 {
+  color: #c41e56;
+  font-size: 1.1rem;
+  margin: 0.4rem 0;
+}
+
+.producto-card p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.producto-card button {
+  margin-top: 10px;
+  background-color: #fd9cbd;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.producto-card button:hover {
+  background-color: #f860d7;
+  transform: scale(1.05);
+}
+
+/* === PERFIL === */
+.perfil-container {
+  text-align: center;
+  padding: 30px;
+}
+
+.perfil-card {
+  display: inline-block;
+  background: #fff9f6;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.perfil-card:hover {
+  box-shadow: 0 6px 18px rgba(255, 111, 145, 0.15);
+}
+
+.perfil-avatar {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffc7ba;
+  margin-bottom: 10px;
+}
+
+.upload-label {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #ffe5e0;
+  color: #333;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.upload-label:hover {
+  background-color: #ffc7ba;
+}
+
+.perfil-buttons button {
+  margin: 8px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ffb6a4;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.perfil-buttons button:hover {
+  background-color: #ff9b8a;
+  transform: scale(1.05);
+}
+
+/* === LOGIN === */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffe6ec, #fff8f0);
+  font-family: "Poppins", sans-serif;
+}
+
+.login-box {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-box h2 {
+  color: #d87ca1;
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+
+.login-box input:focus {
+  border-color: #d87ca1;
+  outline: none;
+  box-shadow: 0 0 4px rgba(216, 124, 161, 0.4);
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background-color: #d87ca1;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+.login-box button:hover {
+  background-color: #c1648f;
+}
+
+.login-footer {
+  margin-top: 20px;
+  color: #777;
+  font-size: 14px;
+}
+
+.login-footer a {
+  color: #d87ca1;
+  text-decoration: none;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+/* === ANIMACIONES SUAVES === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .productos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+  }
+
+  .nav-bar {
+    flex-direction: column;
+  }
+
+  .nav-bar button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+
+
+.cart-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(255, 143, 163, 0.15);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.cart-container h2 {
+  text-align: center;
+  color: #c41e56;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+/* === Tabla del carrito === */
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart-table th {
+  background-color: #ffedf1;
+  color: #c41e56;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 12px;
+  border-bottom: 2px solid #ffd4df;
+}
+
+.cart-table td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #f2f2f2;
+  vertical-align: middle;
+}
+
+/* === Imagen del producto === */
+.cart-product {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.cart-product img {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 2px solid #ffccd5;
+}
+
+/* === Cantidad === */
+.cart-qty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart-qty button {
+  background-color: #ff8fa3;
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cart-qty button:hover {
+  background-color: #ff6f91;
+}
+
+/* === Botón eliminar === */
+.btn-remove {
+  background-color: #ff5959;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-remove:hover {
+  background-color: #f19ecf;
+}
+
+/* === Totales === */
+.cart-summary {
+  margin-top: 25px;
+  text-align: right;
+}
+
+.cart-summary h3 {
+  color: #333;
+  font-weight: 600;
+}
+
+.cart-summary .total {
+  color: #c41e56;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+/* === Botón pagar === */
+.btn-checkout {
+  display: inline-block;
+  margin-top: 15px;
+  background-color: #ff8fa3;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-checkout:hover {
+  background-color: #f8b6db;
+  transform: translateY(-2px);
+}
+
+/* === Carrito vacío === */
+.cart-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #888;
+  font-size: 1.1rem;
+}
+
+.cart-empty img {
+  width: 180px;
+  opacity: 0.7;
+  margin-bottom: 15px;
+}
+
+/* === Animación general === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Responsivo === */
+@media (max-width: 768px) {
+  .cart-table thead {
+    display: none;
+  }
+
+  .cart-table tr {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    padding: 10px;
+  }
+
+  .cart-table td {
+    border: none;
+    text-align: left;
+    padding: 8px 10px;
+  }
+
+  .cart-summary {
+    text-align: center;
+  }
+
+  .btn-checkout {
+    width: 100%;
+  }
+}
